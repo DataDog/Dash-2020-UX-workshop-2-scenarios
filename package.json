@@ -1,0 +1,10 @@
+{
+  "name": "Dash-2020-UX-workshop-2-scenarios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Etienne Brodu <etienne.brodu@datadoghq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "katacoda-cli": "^0.0.20"
+  }
+}
