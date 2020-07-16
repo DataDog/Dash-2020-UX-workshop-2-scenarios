@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir /ecommerce-observability
+mkdir ~/ecommerce-observability
 git clone https://github.com/burningion/ecommerce-observability /ecommerce-observability
-cd /ecommerce-observability && git checkout no-instrumentation
+cd ~/ecommerce-observability && git checkout no-instrumentation
