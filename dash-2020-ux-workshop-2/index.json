@@ -27,7 +27,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "setup.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -35,6 +36,9 @@
   },
   "environment": {
     "uilayout": "terminal"
+    "uieditorpath": "/ecommerce-observability",
+    "showdashboard": true,
+    "dashboards": [{"name": "storedog", "port": 3000}]
   },
   "backend": {
     "imageid": "ubuntu1804"
