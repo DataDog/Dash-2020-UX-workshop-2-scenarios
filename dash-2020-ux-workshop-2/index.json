@@ -35,7 +35,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
     "uieditorpath": "/ecommerce-observability",
     "showdashboard": true,
     "dashboards": [{"name": "storedog", "port": 3000}]

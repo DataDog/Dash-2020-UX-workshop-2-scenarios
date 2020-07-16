@@ -6,5 +6,8 @@
   "license": "MIT",
   "dependencies": {
     "katacoda-cli": "^0.0.20"
+  },
+  "scripts": {
+    "validate": "katacoda validate:all --repo ."
   }
 }
