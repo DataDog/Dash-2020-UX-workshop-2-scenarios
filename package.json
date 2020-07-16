@@ -8,6 +8,8 @@
     "katacoda-cli": "^0.0.20"
   },
   "scripts": {
-    "validate": "katacoda validate:all --repo ."
+    "validate": "katacoda validate:all --repo .",
+    "build": "docker build -t d20ux2-server tests",
+    "deploy": "cd tests; docker-compose up -d",
   }
 }
