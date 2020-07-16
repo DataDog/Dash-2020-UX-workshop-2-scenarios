@@ -1,6 +1,6 @@
 {
   "steps": {
     "test": "yarn test",
-    "deploy": "yarn deploy"
+    "deploy": "yarn build; yarn deploy"
   }
 }
