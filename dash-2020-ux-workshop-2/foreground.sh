@@ -18,6 +18,9 @@ mkdir /ecommerce-observability
 git clone https://github.com/burningion/ecommerce-observability /ecommerce-observability
 cd /ecommerce-observability && git checkout no-instrumentation
 
-docker pull postgres:11-alpine burningion/ecommerce-spree-ads:latest burningion/ecommerce-spree-observability:cpu-workaround burningion/ecommerce-spree-discounts:latest
+docker pull postgres:11-alpine
+docker pull burningion/ecommerce-spree-ads:latest
+docker pull burningion/ecommerce-spree-observability:cpu-workaround
+docker pull burningion/ecommerce-spree-discounts:latest
 
 echo "Done"
