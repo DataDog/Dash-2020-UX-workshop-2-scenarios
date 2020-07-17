@@ -6,6 +6,7 @@ git init --bare remote # Prepare a fake remote to push to
 
 git clone https://github.com/etnbrd/ecommerce-workshop.git ~/ecommerce-observability
 cd ~/ecommerce-observability
+docker-compose pull # pull images now to avoid wasting time later
 git remote add deploy ~/remote # Add the fake remote
 cp scripts/pre-push .git/hooks/ # Setup the fake CI/CD
 

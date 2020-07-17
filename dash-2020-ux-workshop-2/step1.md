@@ -7,7 +7,7 @@ In this step, we will deploy a first environment and see it running.
 The images were built already during the setup of this VM, but you can do it again to have a complete flow.
 
 ```
-./scripts/build.sh
+docker build -t discounts-service discounts-service
 ```
 
 ## Deploy
