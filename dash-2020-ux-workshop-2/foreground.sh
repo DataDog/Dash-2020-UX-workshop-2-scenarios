@@ -12,4 +12,6 @@ cp scripts/pre-push .git/hooks/ # Setup the fake CI/CD
 git config --global user.email "relevant-titmouse@dash2020.datadoghq.com"
 git config --global user.name "relevant titmouse"
 
+./scripts/build.sh
+
 echo "Done"
