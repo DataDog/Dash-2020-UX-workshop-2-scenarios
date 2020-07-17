@@ -19,7 +19,12 @@ The goal of a Canary deployment is two-folds:
 
 Let's deploy a new environment for the canary!
 
-TODO I am not sure how best to "simulate" or provide two concurrently running environment.
+> TODO I am not sure how best to "simulate" or provide two concurrently running environment.
+It would be relevant to have several replicas all pointing to the same database, and reloading only one of the replica with the new image.
+
+> TODO It might make more sense to move this step to after we have synthetics test running, as a part of deploying a change, maybe? But it might get confusin in the story: having the canary deployment in the middle of the end-to-end testing.
+
+---
 
 Fun fact (which is not so fun) the canary term comes from the canaries that miners were using in Coal mines to alert of a potential inodor but toxic gas leaks. The canary would die first from ashpyxie, alerting the miners of the gas leak.
 

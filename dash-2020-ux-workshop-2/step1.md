@@ -25,11 +25,11 @@ In case you are curious, the `deploy` remote is just a bare local repo, and allo
 
 ## Retrieve API and APP keys
 
-TODO
+> TODO steps to retrieve the keys and export them as environment variable for later
 
 ## See traffic in Datadog
 
-TODO
+> TODO
 
 ## Install the Synthetics chrome extension
 
@@ -39,3 +39,6 @@ While recording a synthetics test, we catch all the interaction the user recordi
 This extension is only available for Chrome for now (Firefox users, let us know if you are interested to have it ported, to weight in on its prioritization).
 
 https://chrome.google.com/webstore/detail/datadog-test-recorder/kkbncfpddhdmkfmalecgnphegacgejoa
+
+> TODO steps to install the extension and verify it's working
+Move this part to just before recording a test?.
