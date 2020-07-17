@@ -4,7 +4,7 @@ echo "Setup..."
 
 
 mkdir ~/ecommerce-observability
-git clone https://github.com/etnbrd/ecommerce-observability ~/ecommerce-observability
+git clone https://github.com/etnbrd/ecommerce-workshop.git ~/ecommerce-observability
 cd ~/ecommerce-observability && git checkout no-instrumentation
 cp -r hooks .git/hooks
 # touch ~/done-setup
