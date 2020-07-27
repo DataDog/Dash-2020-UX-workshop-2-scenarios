@@ -19,7 +19,9 @@ The goal of a canary deployment is two-folds:
 Let's deploy a new environment for the canary!
 
 > TODO I am not sure how best to "simulate" or provide two concurrently running environment.
-It would be relevant to have several replicas all pointing to the same database, and reloading only one of the replica with the new image.
+I was thinking of modifying the docker-compose to have several replicas all pointing to the same database, and reloading only one of the replica with the new image.
+We will have the attendee imagine a load balancer, pointing to these 2 replicas, one of which is the canary.
+As we will operate on the discount services, it would mean spinning a canary front-end as well, though.
 
 > TODO It might make more sense to move this step to after we have synthetics test running, as a part of deploying a change, maybe? But it might get confusin in the story: having the canary deployment in the middle of the end-to-end testing.
 
