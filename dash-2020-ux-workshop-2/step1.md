@@ -1,8 +1,8 @@
-In this step, we will deploy a first environment and see it running.
+In this step, we will deploy the first environment and see it running.
 
 # Build
 
-The images were built already and pulled during the setup of this VM, so there is no need to build them as it takes quite some time.
+The images were pre-built and pulled during the setup of this VM, so there is no need to build them as it takes quite some time.
 Running `docker images` we should be able to see all the images we need.
 
 Though, there is one image we will rebuild later with the following command: the discount service.
@@ -33,8 +33,8 @@ export DD_API_KEY=<your api key>
 
 # Deploy
 
-Then, let's deploy!
-We setup a fake CI/CD environment. So to deploy, you just need to push to a special repository.
+Now let's deploy!
+We setup a fake CI/CD environment, so to deploy, you'll only need to run `git push deploy`{{execute}}.
 
 ```
 git push deploy
@@ -44,9 +44,11 @@ Once everything is running, you should be able to visit the store by clicking on
 
 ![The ecommerce app should be available](assets/storedog.png)
 
-> For the curious among us, the `deploy` remote is just a bare local repo which allow us to use a `pre-push` hook which then launch a deployment script.
+> For the curious among us, the `deploy` remote is just a bare local repository which allow us to use a `pre-push` hook which then launch a deployment script.
 
-# See traffic in Datadog
+# Retrieve API and APP keys
+
+# See Traffic in Datadog
 
 The application is running and instrumented, we should now be able to see some traffic in datadog.
 The 
@@ -69,14 +71,16 @@ Datadog even builds a map of the different services to understand their interact
 
 > TODO RUM app
 
-# Install the Synthetics chrome extension
+# Install the Synthetics Chrome Extension
 
-While we are at it, let's install everything we will need for later.
+While we're at it, let's install everything we will need for later.
 
-While recording a synthetics test, we catch all the interaction the user recording have with the page. To do so correctly, we need to install an extension to the browser.
-This extension is only available for Chrome for now (Firefox users, let us know if you are interested to have it ported, to weight in on its prioritization).
+While recording a synthetics test, we catch all interactions with the page in the recorded tab. To do so correctly, we need to install an extension in the browser.
+This extension is only available for Chrome for now.
 
-https://chrome.google.com/webstore/detail/datadog-test-recorder/kkbncfpddhdmkfmalecgnphegacgejoa
+>Firefox users: let us know if you are interested in having it ported, in order to help with its prioritization.
+
+[Datadog Synthetics Chrome Extension](https://chrome.google.com/webstore/detail/datadog-test-recorder/kkbncfpddhdmkfmalecgnphegacgejoa)
 
 > TODO steps to install the extension and verify it's working
 Move this part to just before recording a test?.
