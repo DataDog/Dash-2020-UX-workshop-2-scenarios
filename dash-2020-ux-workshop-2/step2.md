@@ -1,5 +1,3 @@
-# Canary Deployments
-
 So we have a production environment running, and we would like to add some more features, change the style or ...
 But these changes might bring some regressions, bugs, failures!
 
@@ -29,7 +27,7 @@ As we will operate on the discount services, it would mean spinning a canary fro
 
 Fun fact (which is not so fun) the canary term comes from the canaries that miners were using in Coal mines to alert of a potential inodor but toxic gas leaks. The canary would die first from ashpyxie, alerting the miners of the gas leak.
 
-## Digging In
+# Digging In
 
 Going further than canary deployments, there are some more strategies we can adopt - they all adopt the same pattern as canary development.
 

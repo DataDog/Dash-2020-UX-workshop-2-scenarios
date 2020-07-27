@@ -1,3 +1,1 @@
-# Monitoring
-
 > TODO RUM scenario

@@ -1,14 +1,12 @@
-# Catching Regressions
-
 With the increasing scale of software systems, testing after each change to catch regressions will become longer and more tedious.
 At some point, it won't realistically be done manually.
 Let's see how to automate these tests with end-to-end testing and monitoring.
 
-## Synthetics Test
+# Synthetics Test
 
 We have a running application available publicly. We don't need anything more to start testing.
 
-The marketing team published a report showiong that the discounts insert is driving 83% of the site's revenue. It's definitely something we don't want to miss, let's record a test to make sure it doesn't break!
+The marketing team published a report showing that the discounts insert is driving 83% of the site's revenue. It's definitely something we don't want to miss, let's record a test to make sure it doesn't break!
 
 TODO steps to record the synthetics test.
 We might explain:
@@ -19,7 +17,7 @@ We might explain:
 The test will run at a fixed interval to make sure the site behave as expected.
 It is behaving as expected for now, and the test should pass.
 
-## Break Things!
+# Break Things!
 
 At some point, the team responsible for the discounts refactored. They even tested heavily from their side to make sure everything was consistent and working. However, a slight change introduced a bug in the UI, preventing the discount from being displayed.
 
@@ -29,8 +27,14 @@ Once the change is deployed, we can see it is live, and indeed, diverging from w
 The test should soon fail, and alert us.
 We can trigger it manually to get the result faster.
 
-## Revert!
+# Revert!
 
 The site is publicly broken - there's no time to waste, let's revert the change we just made!
 
 TODO deploy the last known good image built.
+
+# Summary
+
+What did we learn here?
+If we had used the canary deployment strategy, we could have limited the impact of this breaking change on user.
+Thanks to the Synthetics test, we managed to detect this breaking change and revert in a timely fashion. Without it, it might have take enough frustration for a user to send us a mail about this breaking change.

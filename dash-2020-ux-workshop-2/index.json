@@ -10,19 +10,19 @@
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Canary Deployments",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Catching Regressions",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Monitoring",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "CI/CD",
         "text": "step5.md"
       }
     ],

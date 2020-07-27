@@ -1,5 +1,3 @@
-# CI/CD
-
 The synthetics tests run at most every 5 minutes, which means a breaking change would be live during these 5 minutes before being caught by a test.
 To catch regressions even before they are live, we can trigger the synthetics test during the CI/CD pipeline.
 
