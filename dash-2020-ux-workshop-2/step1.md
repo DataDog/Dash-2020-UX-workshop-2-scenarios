@@ -21,8 +21,8 @@ We can find this API key in the Integration menu, within the APIs entry.
 Once in APIs tab of the Integration screen, the API Key is in the first revealing section.
 The API key is masked at first, but will reveal when hovering the mouse.
 It's possible to double-click to select and copy it to paste it later in the terminal.
-![](assets/api-key-masked.png)
-![](assets/api-key-revealed.png)
+![The api key is masked behind the purple band](assets/api-key-masked.png)
+![And reveals itself on a mouse hover](assets/api-key-revealed.png)
 
 The datadog agent will expect this API key to be available under the `DD_API_KEY` environment variable.
 So we can simply export this variable to be available throughout our session.
@@ -42,13 +42,32 @@ git push deploy
 
 Once everything is running, you should be able to visit the store by clicking on `storedog` in the tabs.
 
-> In case you are curious, the `deploy` remote is just a bare local repo which allow us to use a `pre-push` hook to launch a deployment script.
+![The ecommerce app should be available](assets/storedog.png)
 
-> TODO screenshot of the store
+> For the curious among us, the `deploy` remote is just a bare local repo which allow us to use a `pre-push` hook which then launch a deployment script.
 
 # See traffic in Datadog
 
-> TODO
+The application is running and instrumented, we should now be able to see some traffic in datadog.
+The 
+
+We should be able to see some logs and traces.
+
+Some logs are sent to datadog each time a user is browsing the ecommerce app.
+[Logs: https://app.datadoghq.com/logs](https://app.datadoghq.com/logs)
+![](assets/logs.png)
+
+The different services are instrumented and available individually in APM.
+[Service list: https://app.datadoghq.com/apm/services](https://app.datadoghq.com/apm/services)
+![](assets/logs.png)
+
+Datadog even builds a map of the different services to understand their interactions.
+[Service map: https://app.datadoghq.com/apm/map](https://app.datadoghq.com/apm/map)
+![](assets/logs.png)
+
+# Setup RUM app
+
+> TODO RUM app
 
 # Install the Synthetics chrome extension
 
