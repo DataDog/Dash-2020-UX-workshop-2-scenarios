@@ -6,7 +6,7 @@ But these changes might bring some regressions, bugs, failures.
 
 At scale, even a tiny probability of failing can take huge proportion and be almost certain to happen.
 If your application has 0.1% chance of crashing, and you have 1000 concurrent instances, then at all times, at least one is failing.
-At scale, "this will never happen anyway" is next tuesday norning.
+At scale, "this will never happen anyway" is next tuesday morning.
 
 To contain the risk of a failure impacting users, we can't act on the probability, but we can act on the scale.
 
@@ -20,7 +20,9 @@ The goal of a Canary deployment is two-folds:
 Let's deploy a new environment for the canary!
 
 > TODO I am not sure how best to "simulate" or provide two concurrently running environment.
-It would be relevant to have several replicas all pointing to the same database, and reloading only one of the replica with the new image.
+I was thinking of modifying the docker-compose to have several replicas all pointing to the same database, and reloading only one of the replica with the new image.
+We will have the attendee imagine a load balancer, pointing to these 2 replicas, one of which is the canary.
+As we will operate on the discount services, it would mean spinning a canary front-end as well, though.
 
 > TODO It might make more sense to move this step to after we have synthetics test running, as a part of deploying a change, maybe? But it might get confusin in the story: having the canary deployment in the middle of the end-to-end testing.
 
