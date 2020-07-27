@@ -1,8 +1,6 @@
-# Setup
-
 In this step, we will deploy a first environment and see it running.
 
-## Build
+# Build
 
 The images were built already and pulled during the setup of this VM, so there is no need to build them as it takes quite some time.
 Running `docker images` we should be able to see all the images we need.
@@ -13,18 +11,18 @@ Though, there is one image we will rebuild later with the following command: the
 docker build -t discounts-service discounts-service
 ```
 
-## Retrieve the API keys
+# API keys
 
 In order to authenticate and send data, the datadog agent will need the API key from the datadog account receiving the data.
 
 We can find this API key in the Integration menu, within the APIs entry.
-[The Integration menu is the jiggsaw puzzle piece icon on the left, then we can find the APIs menu entry](assets/integrations.png)
+![The Integration menu is the jiggsaw puzzle piece icon on the left, then we can find the APIs menu entry](assets/integrations.png)
 
 Once in APIs tab of the Integration screen, the API Key is in the first revealing section.
 The API key is masked at first, but will reveal when hovering the mouse.
 It's possible to double-click to select and copy it to paste it later in the terminal.
-[](assets/api-key-masked.png)
-[](assets/api-key-revealed.png)
+![](assets/api-key-masked.png)
+![](assets/api-key-revealed.png)
 
 The datadog agent will expect this API key to be available under the `DD_API_KEY` environment variable.
 So we can simply export this variable to be available throughout our session.
@@ -33,7 +31,7 @@ So we can simply export this variable to be available throughout our session.
 export DD_API_KEY=<your api key>
 ```
 
-## Deploy
+# Deploy
 
 Then, let's deploy!
 We setup a fake CI/CD environment. So to deploy, you just need to push to a special repository.
@@ -48,11 +46,11 @@ Once everything is running, you should be able to visit the store by clicking on
 
 > TODO screenshot of the store
 
-## See traffic in Datadog
+# See traffic in Datadog
 
 > TODO
 
-## Install the Synthetics chrome extension
+# Install the Synthetics chrome extension
 
 While we are at it, let's install everything we will need for later.
 
