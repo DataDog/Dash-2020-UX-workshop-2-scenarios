@@ -5,7 +5,7 @@ Congratulations, you just took a few steps toward safer deployments and more sta
 
 We hope you enjoyed this workshop, that it grew your interest for this subject and gave you the tools to dive deeper.
 
-To summarize, if you had to rememeber only a few things from this workshop, it would these:
+To summarize, if you had to rememeber only a few things from this workshop, it would be these:
 
 - Things will break at scale, there is no avoiding it.
 - To catch these regressions, we can use end-to-end tests (Synthetics) and monitoring (RUM).
