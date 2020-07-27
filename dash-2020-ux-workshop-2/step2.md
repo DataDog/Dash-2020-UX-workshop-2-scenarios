@@ -1,11 +1,10 @@
-# Canary deployments
+# Canary Deployments
 
-So we have a production environment running.
-And we would like to add some more features, or change the style or ...
-But these changes might bring some regressions, bugs, failures.
+So we have a production environment running, and we would like to add some more features, change the style or ...
+But these changes might bring some regressions, bugs, failures!
 
-At scale, even a tiny probability of failing can take huge proportion and be almost certain to happen.
-If your application has 0.1% chance of crashing, and you have 1000 concurrent instances, then at all times, at least one is failing.
+At scale, even the smallest chance of failing can take on huge proportion and be almost certain to happen.
+If your application has 0.1% chance of crashing, and you have 1000 concurrent instances, then most of the time at least one is failing.
 At scale, "this will never happen anyway" is next tuesday norning.
 
 To contain the risk of a failure impacting users, we can't act on the probability, but we can act on the scale.
@@ -13,7 +12,7 @@ To contain the risk of a failure impacting users, we can't act on the probabilit
 The canary deployment strategy is deploying changes at a reduced scale to contain the overall risk of failure to a subset of users.
 We deploy the cahnge to only a subset of our infrastructure, or for a subset of users, and see that everything goes as planned.
 
-The goal of a Canary deployment is two-folds:
+The goal of a canary deployment is two-folds:
 - limit the blast radius of any uncertain change, and
 - allow to very quickly revert it if things goes sideways.
 
@@ -28,16 +27,16 @@ It would be relevant to have several replicas all pointing to the same database,
 
 Fun fact (which is not so fun) the canary term comes from the canaries that miners were using in Coal mines to alert of a potential inodor but toxic gas leaks. The canary would die first from ashpyxie, alerting the miners of the gas leak.
 
-## Dive more
+## Digging In
 
-Going further than Canary deployments, there are some more strategies we can adopt. They all adopt the same pattern as Canary development
+Going further than canary deployments, there are some more strategies we can adopt - they all adopt the same pattern as canary development.
 
-- [Feature flags](https://featureflags.io/) are a way to activate and show some features of an application only for a subset of users.
-It's a very lightweight and fast to implement in your own code base.
-But it comes with some limitations though, as it's only available from within the application, it cannot protect from bugs in 
+- [Feature flags](https://featureflags.io) are a way to activate and show some features of an application only for a subset of users.
+They are lightweight and fast to implement in your own code base.
+This comes with some limitations, however, as they are only available from within the application, it cannot protect from bugs in (TODO: missing a word, or not needed?)
 it cannot prevent a bug from crashing it, potentially for users who don't have the feature flags activaited.
 
-- Blue-green deployment is like canary deployment, but switching the whole traffic from one version to the other. Canary deployment is obviously preferable as it is more risk averse.
+- Blue-green deployments are like canary deployments, but switching the whole traffic from one version to the other. A canary deployment is usually preferable as are less risky.
 
-- Rolling deployments is like canary deployment, but switching traffic progressively from one version to the next.
+- Rolling deployments are like canary deployments, but are performed by switching traffic progressively from one version to the next.
 This practice is tangential to the idea of keeping several versions of the same software system available.
