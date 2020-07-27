@@ -139,7 +139,10 @@ This extension is only available for Chrome for now.
 Once the extension is installed, we can record our first test.
 We'll just make an assertion, to make sure an element is present on the page.
 If the logo is there, it's probably enough to ensure the site is live.
-<source src="assets/synthetics-recording.webm"type="video/webm">
+<video controls>
+  <source src="assets/synthetics-recording.webm"type="video/webm">
+  Sorry, your browser doesn't support embedded videos.
+</video>
 
 ---
 
