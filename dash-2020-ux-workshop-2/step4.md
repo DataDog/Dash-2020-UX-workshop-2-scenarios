@@ -29,11 +29,13 @@ The site is publicly broken - there's no time to waste, let's revert the change 
 
 `git revert HEAD --no-edit`{{ execute }}
 
-`git push deploy` {{ execute }}
+`git push deploy`{{ execute }}
 
 # Summary
 
 What did we learn here?
 If we had used the canary deployment strategy, we could have limited the impact of this breaking change on a subset of users.
 
-Thanks to the Synthetics test, we managed to detect this breaking change and revert in a timely fashion. Without it, it might have take enough frustration for a user to send us a mail about this breaking change.
+Thanks to the Synthetics test, we managed to detect this breaking change and revert it in a timely fashion.
+Without these tests, it might have take enough frustration for a user to send us a mail about this regression.
+Definitely not the user experience we want to provide.
