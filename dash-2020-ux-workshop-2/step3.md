@@ -96,7 +96,8 @@ We want to extract the value from a specific element — the discount insert —
 
 And to finish, we will write some code to extract the code from the element content.
 We can use the same regex from the previous step, but with a capturing group using parenthesis `(...)`. The rest of the code is just getting the value of the captured group and returning it to fill the variable.
-<pre class="hljs file" data-target="clipboard">
+<pre class="hljs file javascript" data-target="clipboard">
+// regex capturing the discount code
 const regex = /^Enter coupon code '([A-Z]{3,8})' at checkout/
 const [full, code] = element.innerText.match(regex)
 return code
