@@ -44,7 +44,7 @@
       "port": 3000
     }, {
       "name": "discounts",
-      "port": 5001
+      "href": "https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount"
     }]
   },
   "backend": {

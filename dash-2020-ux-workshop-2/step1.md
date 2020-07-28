@@ -139,3 +139,5 @@ This extension is only available for Chrome for now.
 Once the extension is installed, we can record our first test.
 We'll just make an assertion, to make sure an element is present on the page.
 If the logo is there, it's probably enough to ensure the site is live.
+
+> TODO let's just move the first test creation from step 3 here.
