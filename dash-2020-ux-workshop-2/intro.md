@@ -17,6 +17,9 @@ With time, the various applications and their teams grows.
 And from times to times, deployments don't go as planned because some changes impact the other services in some unexpected ways.
 In this scenario, we will keep things simple, but I imagine this is something you should be able to relate to from your current position.
 
-This scenario contains 4 steps.
-- setup the application and your datadog account to start monitoring it.
-- TODO...
+This scenario contains 5 steps:
+1. Setup the storedog application and your datadog account to start monitoring it.
+2. See the Canary deployment strategy to reduce regressions impact.
+3. Setup some Synthetics tests to catch any regression that could happen.
+4. Introduce a regression, see the tests failling and alerting us and revert.
+5. Setup the Synthetics tests to trigger for every deployment.

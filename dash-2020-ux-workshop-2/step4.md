@@ -6,13 +6,17 @@ For the purpose of this workshop, we will keep things extremely simple, and intr
 The discount team decided to rename `code` into `coupon`.
 
 The change is ready as a patch we can immediatly apply without editing files.
+
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
 We can see the changes introduced.
+
 `git diff`{{ execute }}
 
 And then commit and deploy these changes.
-`git commit -m ":globe_with_meridians: improve naming with coupon instead of code"`{{ execute }}
+
+`git commit -a -m ":globe_with_meridians: improve naming with coupon instead of code"`{{ execute }}
+
 `git push deploy`{{ execute }}
 
 Once the change is deployed, we can see it is live, and indeed, diverging from what is expected.
@@ -22,7 +26,9 @@ We can trigger it manually to get the result faster.
 # Revert!
 
 The site is publicly broken - there's no time to waste, let's revert the change we just made and redeploy!
+
 `git revert HEAD --no-edit`{{ execute }}
+
 `git push deploy` {{ execute }}
 
 # Summary
