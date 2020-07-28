@@ -14,11 +14,11 @@
         "text": "step2.md"
       },
       {
-        "title": "Catching Regressions",
+        "title": "End-to-end testing",
         "text": "step3.md"
       },
       {
-        "title": "Monitoring",
+        "title": "Breaking things!",
         "text": "step4.md"
       },
       {
@@ -39,7 +39,13 @@
     "uilayout": "terminal",
     "uieditorpath": "/ecommerce-observability",
     "showdashboard": true,
-    "dashboards": [{"name": "storedog", "port": 3000}]
+    "dashboards": [{
+      "name": "storedog",
+      "port": 3000
+    }, {
+      "name": "discounts",
+      "port": 5001
+    }]
   },
   "backend": {
     "imageid": "ubuntu1804"

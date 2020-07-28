@@ -139,13 +139,3 @@ This extension is only available for Chrome for now.
 Once the extension is installed, we can record our first test.
 We'll just make an assertion, to make sure an element is present on the page.
 If the logo is there, it's probably enough to ensure the site is live.
-<video controls>
-  <source src="https://www.katacoda.com/etnbrddd/scenarios/dash-2020-ux-workshop-2/assets/synthetics-recording.webm"type="video/webm">
-  Sorry, your browser doesn't support embedded videos.
-</video>
-
----
-
-> TODO ask adrien trauth about its usage of RUM + Synthetics
--> https://docs.google.com/presentation/d/1Ou07QI7UnC0TMBUf3YqIv6O760meIpjezcKGKRagT3g/edit#slide=id.g77a8028438_0_492
-

@@ -1,14 +1,15 @@
-So we have a production environment running, and we would like to add some more features, change the style or ...
-But these changes might bring some regressions, bugs, failures!
+So we have a production environment running, and we would like to add some more features, change the style and so on.
+But these changes might bring some regressions, bugs, failures negatively impacting the user experience.
 
 At scale, even the smallest chance of failing can take on huge proportion and be almost certain to happen.
 If your application has 0.1% chance of crashing, and you have 1000 concurrent instances, then most of the time at least one is failing.
 At scale, "this will never happen anyway" is next tuesday norning.
 
-To contain the risk of a failure impacting users, we can't act on the probability, but we can act on the scale.
+We can't act on the probability of a failure as it's alaways unexpected, and undesirable.
+However, we can act on the scale of impact of the error on users.
 
 The canary deployment strategy is deploying changes at a reduced scale to contain the overall risk of failure to a subset of users.
-We deploy the cahnge to only a subset of our infrastructure, or for a subset of users, and see that everything goes as planned.
+We deploy the change to only a subset of our infrastructure, or for a subset of users, and see that everything goes as planned before deploying globally.
 
 The goal of a canary deployment is two-folds:
 - limit the blast radius of any uncertain change, and
@@ -33,8 +34,8 @@ Going further than canary deployments, there are some more strategies we can ado
 
 - [Feature flags](https://featureflags.io) are a way to activate and show some features of an application only for a subset of users.
 They are lightweight and fast to implement in your own code base.
-This comes with some limitations, however, as they are only available from within the application, it cannot protect from bugs in (TODO: missing a word, or not needed?)
-it cannot prevent a bug from crashing it, potentially for users who don't have the feature flags activaited.
+This comes with some limitations, however, as they are only available from within the application.
+It cannot protect from failures in the infrastructure, or from bug crashing the application, even for users without the feature flags activated.
 
 - Blue-green deployments are like canary deployments, but switching the whole traffic from one version to the other. A canary deployment is usually preferable as are less risky.
 
