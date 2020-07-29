@@ -60,6 +60,7 @@ If there isn't the greeting followed by the creation pop-up, there is button on 
 ![](assets/synthetics-start.png)
 
 We only need to fill the url, the name and the location from which to run the test.
+We should only select one location, as the app is quite fragile and may crash if it's accessed concurrently.
 ![](assets/synthetics-test-1.png)
 
 Then we can scroll to the bottom and start recording the test.
@@ -75,7 +76,3 @@ This extension is only available for Chrome for now.
 
 Once the extension is installed, we can record our first test.
 But before that, let's take a step back and look at the infrastructure of our application.
-
-# Infrastructure
-
-![](assets/infrastructure.png)

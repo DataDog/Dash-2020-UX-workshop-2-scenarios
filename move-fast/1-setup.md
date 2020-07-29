@@ -5,9 +5,9 @@ In this step, we will deploy the first environment and see it running.
 ## Build
 
 The images were pre-built and pulled during the setup of this VM, so there is no need to build them as it takes quite some time.
-Running `docker images` we should be able to see all the images we need.
+Running `docker images`{{ execute }} we should be able to see all the images we need.
 
-Though, there is one image we will rebuild later with the following command: the discount service.
+Though, there is one image we will rebuild later: the discount service.
 
 ```
 docker build -t discounts-service discounts-service
@@ -16,17 +16,15 @@ docker build -t discounts-service discounts-service
 ## Deploy
 
 Now let's deploy!
-We setup a fake CI/CD environment, so to deploy, you'll only need to run `git push deploy`{{execute}}.
-
-```
-git push deploy
-```
+This workshop environment contains a fake CI/CD pipeline, so to deploy, we'll only need to run `git push deploy`{{execute}}.
 
 Once everything is running, you should be able to visit the store by clicking on `storedog` in the tabs.
 
 ![The ecommerce app should be available](assets/storedog.png)
 
 > For the curious among us, the `deploy` remote is just a bare local repository which allow to use the `pre-push` hook to launch a deployment script which simply run `docker-compose`.
+
+<!-- 
 
 # Datadog agent
 
@@ -69,8 +67,9 @@ export DD_APP_KEY=<your app key>
 ```
 
 For the agent to take into account these keys, we need to restart the application.
-`docker-compose -p prod restart`{{execute}}
 
+`git push deploy`{{execute}}
+ --> 
 ## See Traffic in Datadog
 
 The application is now running and instrumented, we should be able to see some traffic in datadog.
