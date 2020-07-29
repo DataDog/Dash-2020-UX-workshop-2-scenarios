@@ -2,7 +2,7 @@
   "title": "Dash – UX monitoring workshop #2",
   "courses": [
     {
-      "pathway_id": "datadog",
+      "pathway_id": "datadog/move-fast",
       "course_id": "move-fast",
       "id": "move-fast",
       "title": "Move fast without breaking things",
