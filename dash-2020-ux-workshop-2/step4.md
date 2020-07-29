@@ -1,11 +1,14 @@
-At some point, the team responsible for the discounts service refactored.
+At some point, the team responsible for the discounts service decided to refactor some naming in their service.
+And at this step, we will assume the role of someone from their team and deploy this refactor.
 
-They tested heavily from their side to make sure everything was consistent and working. However, a slight change introduced a bug in the UI, preventing the discount from being displayed.
+They tested heavily internally to make sure everything was consistent and working.
+However, a slight change in the interface with storedog is going to introduce a bug in the UI, preventing the discount code from being displayed.
 
-For the purpose of this workshop, we will keep things extremely simple, and introduce a change only to break the discount service.
-The discount team decided to rename `code` into `coupon`.
+# Break things!
 
-The change is ready as a patch we can immediatly apply without editing files.
+For the purpose of this workshop, we will keep things extremely simple, and introduce the smallest change to break the discount service: the discount team decided to rename `code` into `coupon`.
+
+The change is ready as a patch we can immediatly apply without editing any files.
 
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 

@@ -48,6 +48,6 @@
     }]
   },
   "backend": {
-    "imageid": "ubuntu1804"
+    "imageid": "datadog-ubuntu"
   }
 }
