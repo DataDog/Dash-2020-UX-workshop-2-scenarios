@@ -23,6 +23,9 @@ And then commit and deploy these changes.
 `git push deploy`{{ execute }}
 
 Once the change is deployed, we can see it is live, and indeed, diverging from what is expected.
+
+![](assets/broken.png)
+
 The test should soon fail, and alert us.
 We can trigger it manually to get the result faster.
 
@@ -40,5 +43,5 @@ What did we learn here?
 If we had used the canary deployment strategy, we could have limited the impact of this breaking change on a subset of users.
 
 Thanks to the Synthetics test, we managed to detect this breaking change and revert it in a timely fashion.
-Without these tests, it might have take enough frustration for a user to send us a mail about this regression.
+Without these tests, it might have taken a frustrated user to send us an email about this regression for us to find out about it.
 Definitely not the user experience we want to provide.

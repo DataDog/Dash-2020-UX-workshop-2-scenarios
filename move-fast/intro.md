@@ -11,16 +11,16 @@ In this Workshop, we will see some strategies to ensure the quality of service d
 ---
 
 The story goes like this.
-We are developing an ecommerce website to sell various dog-related gears.
+We are developing an ecommerce website to sell various dog-related gear.
 Our team is growing steadily, and despite our legacy infrastructure, we start to extract some microservices out of our monolithic application.
-With time, the various applications and their teams grows.
-And from times to times, deployments don't go as planned because some changes impact the other services in some unexpected ways.
-In this scenario, we will keep things simple, but I imagine this is something you should be able to relate to from your current position.
+With time, the various applications and their teams grow.
+And from time to time, deployments don't go as planned because some changes impact the other services in some unexpected ways.
+In this scenario, we will keep things simple, but I imagine this is something you should be able to relate to your current position.
 
 This scenario contains 6 steps:
 1. Setup the storedog application and your datadog account to start monitoring it.
-2. see Canary deployment and other strategies to reduce regressions impact.
+2. See Canary deployment and other strategies to reduce regressions impact.
 3. Setup Synthetics 
 4. Setup some Synthetics tests to catch any regression that could happen.
-5. Introduce a regression, see the tests failling and alerting us and revert.
+5. Introduce a regression: see the tests failing, alert us, and revert.
 6. Setup the Synthetics tests to trigger for every deployment.
