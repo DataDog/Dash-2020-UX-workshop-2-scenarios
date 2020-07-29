@@ -1,12 +1,16 @@
 So we have a production environment running, and we would like to add some more features, change the style and so on.
 But these changes might bring some regressions, bugs, failures negatively impacting the user experience.
 
+# Blast radius
+
 At scale, even the smallest chance of failing can take on huge proportion and be almost certain to happen.
-If your application has 0.1% chance of crashing, and you have 1000 concurrent instances, then most of the time at least one is failing.
+If our application has even 0.1% chance of crashing, and we have 1000 concurrent instances, then at least one is failing at any time.
 At scale, "this will never happen anyway" is next tuesday norning.
 
 We can't act on the probability of a failure as it's alaways unexpected, and undesirable.
 However, we can act on the scale of impact of the error on users.
+
+# Canary deployment
 
 The canary deployment strategy is deploying changes at a reduced scale to contain the overall risk of failure to a subset of users.
 We deploy the change to only a subset of our infrastructure, or for a subset of users, and see that everything goes as planned before deploying globally.
@@ -14,6 +18,31 @@ We deploy the change to only a subset of our infrastructure, or for a subset of 
 The goal of a canary deployment is two-folds:
 - limit the blast radius of any uncertain change, and
 - allow to very quickly revert it if things goes sideways.
+
+We won't be able to deploy a canary for our application, but we can imagine how it would be setup.
+
+Looking at the service map, we see there is a postgres database at the far left, which is common for the discount and the advertisement services.
+![](assets/service-map.png)
+
+We could setup several instances of each of these services, and one of these instance could be our canary.
+To keep a single point of contact, we need a load balancer in front of these instances.
+And the database needs to stay unique to make sure all instances have the same data. Though, it can be replicated, sharded, distributed, to allow for a high load capacity.
+![](assets/canary.png)
+
+The load-balancer could distribute traffic randomly, or depending on a set of user id.
+This way, only a subset of users would be impacted by a potential failure introduced by the Canary.
+
+
+# Blue/green deployment
+
+A simpler alternative to the canary deployment strategy is the Blue/green deployment strategy.
+It consists of deploying both version concurrently, and switching the traffic from one version to the next.
+It doesn't reduce the blast radius of a potential failure, but if anything goes sideways, reverting is still very fast.
+
+We won't introduce a canary nor blue/green deployment in our application, as it would be too long for this workshop.
+But we could easily imagine how it would help us avoid catastrophic failures for our application.
+
+<!--
 
 Let's deploy a new environment for the canary!
 
@@ -41,3 +70,8 @@ It cannot protect from failures in the infrastructure, or from bug crashing the 
 
 - Rolling deployments are like canary deployments, but are performed by switching traffic progressively from one version to the next.
 This practice is tangential to the idea of keeping several versions of the same software system available.
+
+-->
+
+
+

@@ -6,24 +6,28 @@
   "details": {
     "steps": [
       {
-        "title": "Setup",
-        "text": "step1.md"
+        "title": "Setup 1/2",
+        "text": "1-setup.md"
       },
       {
-        "title": "Canary Deployments",
-        "text": "step2.md"
+        "title": "Canary Deployment",
+        "text": "2-canary.md"
+      },
+      {
+        "title": "Setup 2/2",
+        "text": "3-setup.md"
       },
       {
         "title": "End-to-end testing",
-        "text": "step3.md"
+        "text": "4-e2e.md"
       },
       {
         "title": "Breaking things!",
-        "text": "step4.md"
+        "text": "5-regression.md"
       },
       {
         "title": "CI/CD",
-        "text": "step5.md"
+        "text": "6-ci.md"
       }
     ],
     "intro": {
