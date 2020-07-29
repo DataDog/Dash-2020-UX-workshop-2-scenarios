@@ -1,12 +1,12 @@
 {
-  "title": "Dash – UX monitoring workshops",
+  "title": "Dash – UX monitoring workshop #2",
   "courses": [
     {
       "pathway_id": "datadog",
       "course_id": "move-fast",
       "id": "move-fast",
       "title": "Move fast without breaking things",
-      "description": "How to reduce the blast radius of failures an regressions"
+      "description": "How to reduce the blast radius of unavoidable failures and regressions"
     }
   ]
 }
