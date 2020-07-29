@@ -11,7 +11,7 @@ In this Workshop, we will see some strategies to ensure the quality of service d
 ---
 
 The story goes like this.
-We are developing a ecommerce website to sell various dog-related gears.
+We are developing an ecommerce website to sell various dog-related gears.
 Our team is growing steadily, and despite our legacy infrastructure, we start to extract some microservices out of our monolithic application.
 With time, the various applications and their teams grows.
 And from times to times, deployments don't go as planned because some changes impact the other services in some unexpected ways.
