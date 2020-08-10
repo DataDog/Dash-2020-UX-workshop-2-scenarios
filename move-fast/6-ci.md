@@ -28,9 +28,9 @@ You can find it either as the last part in the url while browsing the test, or i
 
 Let's create this file and fill in these info in the editor.
 
-`touch ~/ecommerce-observability/discount.synthetics.json`{{ execute }}
+`touch /root/ecommerce-observability/discount.synthetics.json`{{ execute }}
 
-`~/ecommerce-observability/discount.synthetics.json`{{ open }}
+`/root/ecommerce-observability/discount.synthetics.json`{{ open }}
 
 <pre class="hljs file json" data-filename="/root/ecommerce-observability/discount.synthetics.json" data-target="replace">
 {
