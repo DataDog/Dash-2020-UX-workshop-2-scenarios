@@ -10,7 +10,7 @@ Our load balancer is imaginary anyway, so that's just a matter of triggering the
 For the Synthetics CI to know which test to trigger, it reads all the `*.synthetics.json` file.
 Here is an example of such a file:
 
-<pre class="hljs file json" data-filename="discount.synthetics.json" data-target="replace">
+<pre class="hljs file json" data-filename="/root/ecommerce-observability/discount.synthetics.json" data-target="replace">
 {
   "tests": [
     {
