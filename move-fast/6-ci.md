@@ -8,7 +8,29 @@ Then we would like to have our CI/CD pipeline setup the canary, and before even 
 Our load balancer is imaginary anyway, so that's just a matter of triggering the Synthetics tests once the canary is deployed.
 
 For the Synthetics CI to know which test to trigger, it reads all the `*.synthetics.json` file.
-Here is an example of such a file:
+Here is an example of such a file containing two tests, `abc-def-ghi` and `jkl-mno-pqr`:
+
+```json
+{
+  "tests": [
+    {
+      "id": "abc-def-ghi",
+    }
+    {
+      "id": "jkl-mno-pqr",
+    }
+  ]
+}
+```
+
+The id of your synthetics test has the form `abc-def-ghi`.
+You can find it either as the last part in the url while browsing the test, or in the summary page of the test, in the properties section.
+
+Let's create this file and fill in these info in the editor.
+
+`touch ~/ecommerce-observability/discount.synthetics.json`{{ execute }}
+
+`~/ecommerce-observability/discount.synthetics.json`{{ open }}
 
 <pre class="hljs file json" data-filename="/root/ecommerce-observability/discount.synthetics.json" data-target="replace">
 {
@@ -20,11 +42,6 @@ Here is an example of such a file:
   ]
 }
 </pre>
-
-The id of your synthetics test has the form `abc-def-ghi`.
-You can find it either as the last part in the url while browsing the test, or in the summary page of the test, in the properties section.
-
-Let's create this file and fill in these info in the editor.
 
 Once this config file is ready and valid, we can redeploy our regression to see synthetics test fail.
 If we were to use synthetics tests in a real CI, we could configure that to either warn us and prevent a manual deployment, or abort an automatic deployment.
