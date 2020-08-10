@@ -1,6 +1,20 @@
-In this step, we will deploy the first environment and see it running.
+Welcome to the development environment we are going to use for this workshop.
+
+Before starting, make sure the terminal on the right is finished running the setup.
+Once it's done, it should display "Done".
 
 # Application
+
+In this step, we will deploy the first environment and see it running.
+This storedog application is composed of a few Docker images, one of them being the Datadog agent.
+The Datadog API key associated with your trial account should already be exported as an environment variable for the agent to use.
+
+`echo $DD_API_KEY`{{ execute }}
+
+An APP key should already be available as well.
+It is required by other datadog client, such as the Datadog CI we are going to use later on.
+
+`echo $DD_APP_KEY`{{ execute }}
 
 ## Build
 
@@ -85,3 +99,42 @@ The different services are instrumented and available individually in APM.
 Datadog even builds a map of the different services to understand their interactions.
 [Service map: https://app.datadoghq.com/apm/map](https://app.datadoghq.com/apm/map)
 ![](assets/service-map.png)
+
+
+> TODO add more content to explain what are the logs, what are APM and so on ...
+
+
+
+<!--
+
+## Setup RUM application
+
+RUM is already integrated within the frontend of our application, and similarly to the datadog agent, we just need to provide it with the right keys to start the monitoring.
+
+Let's create a RUM application to monitor our frontend.
+If we had a backoffice, or a mobile application, that could be a different RUM application.
+
+The RUM tool is under the UX Monitoring menu.
+![](assets/rum.png)
+
+We should be prompted to create and name an application.
+![](assets/rum-add-app.png)
+![](assets/rum-setup-1.png)
+
+This application has a specific id and client token we need to provide as environment variables.
+![](assets/rum-setup-2.png)
+
+```
+export DD_APPLICATION_ID=<your application id>
+export DD_CLIENT_TOKEN=<your client token>
+```
+
+For the frontend to take into account these keys, we need to restart the application.
+`docker-compose -p prod restart`{{execute}}
+
+## See RUM Traffic in Datadog
+
+Once everything is running with the right tokens, we should be able to see some user data being reported to RUM.
+> TODO can't make it work for now.
+
+-->

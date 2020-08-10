@@ -6,24 +6,24 @@
   "details": {
     "steps": [
       {
-        "title": "Setup 1/2",
+        "title": "Setup",
         "text": "1-setup.md"
       },
       {
-        "title": "Canary Deployment",
-        "text": "2-canary.md"
+        "title": "End-to-end testing — part 1",
+        "text": "2-e2e.md"
       },
       {
-        "title": "Setup 2/2",
-        "text": "3-setup.md"
-      },
-      {
-        "title": "End-to-end testing",
-        "text": "4-e2e.md"
+        "title": "End-to-end testing — part 2",
+        "text": "3-e2e.md"
       },
       {
         "title": "Breaking things!",
-        "text": "5-regression.md"
+        "text": "4-regression.md"
+      },
+      {
+        "title": "Canary Deployment",
+        "text": "5-canary.md"
       },
       {
         "title": "CI/CD",
@@ -42,6 +42,7 @@
     "uilayout": "terminal",
     "uieditorpath": "/ecommerce-observability",
     "showdashboard": true,
+    "showide": true,
     "dashboards": [{
       "name": "storedog",
       "port": 3000
