@@ -40,7 +40,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "/ecommerce-observability",
+    "uieditorpath": "/root",
     "showdashboard": true,
     "dashboards": [{
       "name": "storedog",
