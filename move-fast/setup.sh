@@ -12,6 +12,7 @@ yarn
 docker-compose pull agent frontend advertisements db # pull images now to avoid wasting time later
 docker pull etnbrddd/ecommerce-frontend:canary # pull images now to avoid wasting time later
 docker build -t discounts-service discounts-service # build image now to avoid wasting time later
+docker build -t discounts-service:canary discounts-service # build image now to avoid wasting time later
 git remote add deploy ~/remote # Add the fake remote
 cp scripts/pre-push .git/hooks/ # Setup the fake CI/CD
 
