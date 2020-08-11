@@ -56,6 +56,8 @@ Let's create a canary for our discount service and store-frontend.
 
 `git diff`{{ execute }}
 
+![](assets/synthetics-canary-diff)
+
 The diff is quite big, but mostly, it adds two new services to act as our canaries:
 - `discount-canary`
 - `frontend-canary`
