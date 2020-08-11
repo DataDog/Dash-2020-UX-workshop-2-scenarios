@@ -48,6 +48,12 @@
     }, {
       "name": "discounts",
       "href": "https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount"
+    }, {
+      "name": "storedog:canary",
+      "port": 3001
+    }, {
+      "name": "discounts:canary",
+      "href": "https://[[HOST_SUBDOMAIN]]-5003-[[KATACODA_HOST]].environments.katacoda.com/discount"
     }]
   },
   "backend": {
