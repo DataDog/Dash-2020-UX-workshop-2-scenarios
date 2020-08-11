@@ -37,7 +37,9 @@ Let's create this file and fill in these info in the editor.
   "tests": [
     {
       "id": "the id of your synthetics test",
-      "startUrl": "your canary storedog url"
+      "config": {
+        "startUrl": "your canary storedog url"
+      }
     }
   ]
 }
