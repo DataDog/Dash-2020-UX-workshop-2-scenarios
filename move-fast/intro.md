@@ -13,7 +13,7 @@ In this Workshop, we will see some strategies to ensure the quality of service d
 The story goes like this.
 We are developing an ecommerce website to sell various dog-related gear.
 Our team is growing steadily, and despite our legacy infrastructure, we start to extract some microservices out of our monolithic application.
-With time, the various applications and their teams grow.
+With time, the various services and their teams grow.
 And from time to time, deployments don't go as planned because some changes impact the other services in some unexpected ways.
 In this scenario, we will keep things simple, but I imagine this is something you should be able to relate to your current position.
 
@@ -21,6 +21,6 @@ This scenario contains 6 steps:
 1. Setup and launch the storedog application.
 2. Create some Synthetics tests to catch any regression that could happen.
 3. Create some advanced Synthetics tests
-4. Introduce a regression: see the tests failing, alert us, and revert.
-5. See Canary deployment to reduce regressions impact.
+4. Introduce a regression to see the tests failing, alert us, then revert.
+5. Setup a Canary deployment to reduce regressions impact.
 6. Setup Synthetics-CI to trigger the Synthetics tests during the CI pipeline.

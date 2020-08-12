@@ -13,6 +13,7 @@ The change is ready as a patch we can immediatly apply without editing any files
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
 We can see the changes introduced.
+It will change the structure of the object returned from the discount service to the frontend.
 
 `git diff`{{ execute }}
 
@@ -44,8 +45,9 @@ The site is publicly broken - there's no time to waste, let's revert the change 
 # Summary
 
 What did we learn here?
-If we had used the canary deployment strategy, we could have limited the impact of this breaking change on a subset of users.
 
 Thanks to the Synthetics test, we managed to detect this breaking change and revert it in a timely fashion.
 Without these tests, it might have taken a frustrated user to send us an email about this regression for us to find out about it.
 Definitely not the user experience we want to provide.
+
+Let's see now how to limit the impact of this breaking change on a subset of users.

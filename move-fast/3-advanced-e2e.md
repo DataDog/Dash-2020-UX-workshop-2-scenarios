@@ -1,7 +1,8 @@
 
 ## Discount code is valid
 
-The discount code matched by the regex could be anything, though, right?
+The discount code matched by the regex could be anything. It doesn't mean it's valid, though.
+
 Let's see some more advanced technique to make sure the code is valid.
 
 We will create two more steps:
@@ -18,10 +19,10 @@ We choose to create our variable from Javascript in the dropdown, and name it `C
 ![](assets/synthetics-elm-var-2.png)
 
 A few explanations on the different variables:
-- Pattern: create random values, that are helpful to randomly fill fields and forms and then check their value afterwards.
+- Pattern: create random values, that are helpful to randomly fill fields and forms, e.g. a timestamp.
 - Element: create a value from the content of an element. We won't use that as we need only a part of the content.
-- Global variable: 
-- Email: 
+- Global variable: create a local variable from a global variable, that is a variable available to all tests. It can contain credentials, URL, and so on.
+- Email: create an email address that can receive mail. It's very useful for confirmation links, notifications, and so on.
 
 We want to extract the value from a specific element — the discount insert — so let's select this element, like in the previous steps.
 ![](assets/synthetics-elm-var-3.png)

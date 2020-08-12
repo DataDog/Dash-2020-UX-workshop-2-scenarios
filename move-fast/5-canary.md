@@ -1,5 +1,5 @@
 So we have a production environment running, and we broke it once already.
-It's time to limit the impact any regression could have on our production environment.
+It's time to limit the impact any regression could have on our users.
 
 # Blast radius
 
@@ -22,7 +22,7 @@ The goal of a canary deployment is two-folds:
 ![](assets/canary-deployment.png)
 
 In a real environment, we might want to dedicate a part of our infrastructure, and configure it to fit the landscape of our existing applications.
-For this workshop, we will keep things simple, and just change the `docker-compose.yml` file containing our infrastructure description with the following patch.
+For this workshop, we will keep things simple, and just change the `docker-compose.yml` file containing our infrastructure description.
 
 Looking at the service map, we see there is a postgres database at the far left, which is common for the discount (and the advertisement) service.
 And the `store-frontend` service is hitting directly the `discounts-service`.
@@ -32,7 +32,7 @@ We could setup new instances for both of these services, `discounts-service` and
 
 ## Load balancer
 
-To keep a single point of contact, we would need a load balancer to distribute users to the regular or canary instances.
+To keep a single point of contact, we would need a load balancer to distribute users to either the regular or the canary instances.
 The load-balancer could distribute traffic randomly, or depending on a set of user id.
 This way, only a subset of users would be impacted by a potential failure introduced by the Canary.
 
@@ -43,10 +43,11 @@ In this workshop, to keep things simple, we will manually choose the flavor we w
 The database needs to stay unique to make sure all instances have the same data.
 Otherwise, users hitting the canary would loose their user profile, for example.
 Though, it can be replicated, sharded, distributed, to allow for a high load capacity.
-![](assets/canary.png)
 
 In case we want to push a change on the database as well, it's common to make the code handle both the old and the new database format, and only then change the format in the database.
 With scale, it might not be possible to update all the entries in the database, nor to remove them in a timely fashion.
+
+![](assets/storedog-canary.png)
 
 # Storedog:canary
 
@@ -75,13 +76,13 @@ Once it's ready, we should have a clone of our storedog ready to receive any cha
 Let's break things once again!
 But only on the canary this time.
 
-## Canary branch
+### Canary branch
 
 Let's change branch to apply the modification only to our canary.
 
 `git checkout -b canary`{{ execute }}
 
-## Break things
+### Break things
 
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
@@ -91,7 +92,7 @@ Let's change branch to apply the modification only to our canary.
 
 Once the change is deployed, we can see it live on the canary only, while our production is still pristine.
 
-## Revert!
+### Revert!
 
 `git revert HEAD --no-edit`{{ execute }}
 

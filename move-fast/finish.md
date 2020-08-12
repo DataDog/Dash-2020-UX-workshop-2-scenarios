@@ -11,5 +11,4 @@ To summarize, and if you had to rememeber only a few things from this workshop, 
 - To catch these regressions, we can use end-to-end tests (Synthetics) and monitoring (RUM).
 - To catch them as early as possible, we can deploy carefully with the canary strategy, and use CI/CD to trigger tests before publishing the changes.
 
-
-> TODO failures are unavoidable, in a context of agile dev, etc., what is key: minimizing downtimes for your users
+**failures are unavoidable, what is important is to minimize the impact for your users**

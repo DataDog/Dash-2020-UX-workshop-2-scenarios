@@ -1,4 +1,4 @@
-Our synthetics test runs every hours, and at most every 5 minutes, which means a breaking change would be live during these 5 minutes before being caught by a test.
+Our synthetics test runs every hours, and we can schedule it at most every 5 minutes, which means a breaking change would be live during these 5 minutes before being caught by a test.
 
 We setup a canary to reduce the impact of any regression, but to push things further, we could catch regressions even before they are live.
 To do so, we would like to trigger the synthetics test during our CI/CD pipeline.
