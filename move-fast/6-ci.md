@@ -65,16 +65,16 @@ In our current test, we send an HTTP test request to an URL that we hardcoded to
 With our new Canary setup, this hardcoded URL always points to the production `storedog` instead of the canary one.
 
 Fortunately, HTTP tests accept variables in their URL.
-Let's create a variable containing the expected URL for the canary discount service.
+Let's create a variable containing the expected URL for the canary discounts service.
 
 We create a new _Variables_ step again, select _Pattern_ in the dropdown.
 We can name this new variable `DISCOUNTS_URL`, like the one in our `discounts.synthetics.json` config file.
-And the value of this variable should be the URL of your productin discounts service, **not the canary**, so that this test remains functional for our production environment.
+And the value of this variable should be the URL of your production discounts service, **not the canary**, so that this test remains functional for our production environment.
 You can find this URL by clicking on `discounts` in the tabs, or directly from the URL with which we filled the HTTP step.
 Alternatively, it is the same as storedog, **except we replace 3000 or 3001 with 5001 (the url-coded port), and it ends with `/discount`**
 ![](assets/synthetics-ci-1.png)
 
-We have a variable containing the discount service URL, let's use it in the HTTP test step.
+We have a variable containing the discounts service URL, let's use it in the HTTP test step.
 We click on the `Run HTTP test` step to modify it, and then we click on the `Edit HTTP Request` button to access the details of the HTTP test.
 From there, we can change the URL and put our variable `DISCOUNTS_URL`.
 

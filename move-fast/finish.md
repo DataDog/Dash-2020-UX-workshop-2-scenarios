@@ -12,4 +12,4 @@ Things will break at scale, and there is no avoiding it.
 - To **contain** these regressions, we can deploy carefully with the **canary deployment strategy**, and
 - To catch them **as early as possible**, we can use **CI/CD** to trigger tests before publishing the changes.
 
-**failures are unavoidable, what is important is to minimize the impact for your users**
+**Failures are unavoidable, what is important is to minimize the impact for your users!**

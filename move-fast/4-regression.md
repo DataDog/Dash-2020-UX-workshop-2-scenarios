@@ -6,14 +6,14 @@ However, a slight change in the interface with `storedog` introduces a bug in th
 
 # Break things!
 
-For this workshop, we will keep things extremely simple, and introduce the smallest change to break the discount service: the discount team decided to rename `code` into `coupon`.
+For this workshop, we will keep things extremely simple, and introduce the smallest change to break the discounts service: the discount team decided to rename `code` into `coupon`.
 
 The change is ready as a patch we can immediately apply without editing any files.
 
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
 We can see the changes introduced.
-It will change the structure of the object returned from the discount service to the frontend.
+It will change the structure of the object returned from the discounts service to the frontend.
 
 `git diff`{{ execute }}
 To exit the diff tool, you might need to press `q` or `escape` until you see the `$` again.
@@ -49,6 +49,7 @@ What did we learn here?
 
 Thanks to the Synthetics test, we managed to detect this breaking change and revert it quickly.
 Without these tests, it might have taken a frustrated user to send us an email about this regression for us to find out about it.
-Not the user experience we want to provide.
+
+Not the user experience we want to provide!
 
 Let's see now how to limit the impact of this breaking change on a subset of users.
