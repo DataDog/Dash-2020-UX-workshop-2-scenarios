@@ -3,11 +3,11 @@
 
 The discount code matched by the regex could be anything. It doesn't mean it's valid, though.
 
-Let's see some more advanced technique to make sure the code is valid.
+Let's use some more advanced techniques to make sure the code is valid.
 
 We will create two more steps:
 1. Extract the discount code into a local variable using Javascript.
-2. Make an http request to the discount service to make sure the code from the variable is valid.
+2. Make an HTTP request to the discount service to make sure the code from the variable is valid.
 
 ### Extract the discount code
 
@@ -18,10 +18,10 @@ Then, we can add a new variable extraction step by clicking on the _Variables_ b
 We choose to create our variable from Javascript in the dropdown, and name it `CODE`.
 ![](assets/synthetics-elm-var-2.png)
 
-A few explanations on the different variables:
-- Pattern: create random values, that are helpful to randomly fill fields and forms, e.g. a timestamp.
-- Element: create a value from the content of an element. We won't use that as we need only a part of the content.
-- Global variable: create a local variable from a global variable, that is a variable available to all tests. It can contain credentials, URL, and so on.
+A few explanations of the different variables:
+- Pattern: create random values that are helpful to fill fields and forms randomly. For example, a timestamp.
+- Element: create a value from the content of the element. We won't use that as we need only a part of the content.
+- Global variable: create a local variable from a global variable, and make the variable available to all tests. It can contain credentials, URLs, and so on.
 - Email: create an email address that can receive mail. It's very useful for confirmation links, notifications, and so on.
 
 We want to extract the value from a specific element — the discount insert — so let's select this element, like in the previous steps.
@@ -44,7 +44,7 @@ And we should be all good, and have the code extracted successfully!
 ### Validate the discount code
 
 Now that we have the discount code extracted into a variable, let's make sure it's a valid code according to the discount service.
-For this, we are going to use an HTTP request step inside our browser test, to query directly the discount service, and make an assertion on the presence of the extracted code in the returned valid code.
+For this, we will use an HTTP request step inside our browser test, query the discount service directly, and make an assertion on the presence of the extracted code in the returned valid code.
 
 Let's create an HTTP request step by clicking on the _HTTP Request_ button.
 ![](assets/synthetics-elm-http-1.png)
@@ -57,23 +57,23 @@ And we will check that the extracted code is available within the returned codes
 
 We can click on the _Test the url_ button to make sure the service is live and responding.
 And we should see the result and status of the request.
-Some assertions are pre-filled with default sane values.
+Some assertions are pre-filled with default, sane values.
 We can add our own by clicking the _New assertion_ button. 
 ![](assets/synthetics-elm-http-3.png)
 
 Our assertion holds on the body of the request.
 ![](assets/synthetics-elm-http-4.png)
 
-And this body should contains the value of the extracted code, so we use the previously extracted variable `CODE` as the value to check for this assertion.
+And this body should contain the value of the extracted code, so we use the previously extracted variable `CODE` as the value to check for this assertion.
 ![](assets/synthetics-elm-http-5.png)
 
 After validation, we can see this fourth step in our test.
 ![](assets/synthetics-elm-http-6.png)
 
 We can _Save & Quit_ to exit back on the details page of the test.
-Then, we can click the _Run Test Now_ button, in the top right corner, to trigger the test to run immediatly, instead of waiting the next scheduling.
+Then, we can click the _Run Test Now_ button, in the top right corner, to trigger the test to run immediatly, instead of waiting for the next scheduling.
 
-And after a couple of minutes, our test should be executed, and still passing.
+And after a couple of minutes, our test should be executed and still passing.
 By clicking on the HTTP Request step, we can see all the details of the http request and our custom assertion.
-In the following screen shot, we can see that the extracted value at step 3 is `FLASH`, and our assertion at step 4 is that the body contains `FLASH`. It's passing so the code must be valid.
+In the following screenshot, we can see that the extracted value at step 3 is `FLASH`, and our assertion in step 4 is that the body contains `FLASH`. It's passing, so the code must be valid.
 ![](assets/synthetics-elm-http-7.png)

@@ -1,14 +1,14 @@
 At some point, the team responsible for the discounts service decided to refactor some naming in their service.
-And at this step, we will assume the role of someone from their team and deploy this refactor.
+And at this step, we assume the role of someone from their team and deploy this refactor.
 
 They tested heavily internally to make sure everything was consistent and working.
-However, a slight change in the interface with storedog is going to introduce a bug in the UI, preventing the discount code from being displayed.
+However, a slight change in the interface with `storedog` introduces a bug in the UI, preventing the discount code from being displayed.
 
 # Break things!
 
-For the purpose of this workshop, we will keep things extremely simple, and introduce the smallest change to break the discount service: the discount team decided to rename `code` into `coupon`.
+For this workshop, we will keep things extremely simple, and introduce the smallest change to break the discount service: the discount team decided to rename `code` into `coupon`.
 
-The change is ready as a patch we can immediatly apply without editing any files.
+The change is ready as a patch we can immediately apply without editing any files.
 
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
@@ -23,11 +23,11 @@ And then commit and deploy these changes.
 
 `git push deploy`{{ execute }}
 
-Once the change is deployed, we can see it is live, and indeed, diverging from what is expected.
+Once the change is deployed, we can see it is live, and diverging from the expected behavior.
 
 ![](assets/broken.png)
 
-The test should soon fail, and alert us.
+The test should soon fail and alert us.
 We can trigger it manually to get the result faster.
 
 And soon enough, we should receive an alert email to warn us about this failure.
@@ -46,8 +46,8 @@ The site is publicly broken - there's no time to waste, let's revert the change 
 
 What did we learn here?
 
-Thanks to the Synthetics test, we managed to detect this breaking change and revert it in a timely fashion.
+Thanks to the Synthetics test, we managed to detect this breaking change and revert it quickly.
 Without these tests, it might have taken a frustrated user to send us an email about this regression for us to find out about it.
-Definitely not the user experience we want to provide.
+Not the user experience we want to provide.
 
 Let's see now how to limit the impact of this breaking change on a subset of users.
