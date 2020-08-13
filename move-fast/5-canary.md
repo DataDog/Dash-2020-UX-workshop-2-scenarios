@@ -56,7 +56,7 @@ Let's create a canary for our discount service and store-frontend.
 `git apply 0001-construction-canary.patch`{{ execute }}
 
 `git diff`{{ execute }}
-To exit the diff tool, you might need to press `q` or `escap` until you see the `$` again.
+To exit the diff tool, you might need to press `q` or `escape` until you see the `$` again.
 
 ![](assets/synthetics-canary-diff)
 

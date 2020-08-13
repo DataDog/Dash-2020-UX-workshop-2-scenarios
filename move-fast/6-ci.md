@@ -42,9 +42,9 @@ Let's open this newly created file in `ecommerce-observability/discounts.synthet
     {
       "id": "the id of your synthetics test",
       "config": {
-        "startUrl": "your canary storedog url",
+        "startUrl": "your canary storedog URL",
         "variables": {
-          "DISCOUNTS_URL": "your canary discounts service url"
+          "DISCOUNTS_URL": "your canary discounts service URL"
         }
       }
     }
@@ -55,7 +55,7 @@ Let's open this newly created file in `ecommerce-observability/discounts.synthet
 The `config.startUrl` tells the `datadog-ci` to override the start URL with the one given here.
 This is especially useful as we can use the exact same synthetics test for our production and canary.
 And the `config.variables` object contains local variables we would like to override during the test.
-We use it to override the discounts service url we used in the HTTP test step.
+We use it to override the discounts service URL we used in the HTTP test step.
 But the HTTP test URL is currently hardcoded into the step, right?
 Let's change that then!
 

@@ -6,12 +6,12 @@ Before starting, make sure the terminal on the right finishes running the setup 
 
 In this step, we will deploy the first environment and see it running.
 This `storedog` application is composed of a few Docker images, including the Datadog Agent.
-The Datadog API key associated with your trial account should already be exported as an environment variable for the Agent to use:
+Use this command to see the Datadog API key associated with your trial account that this workshop exported as an environment variable for the Agent to use:
 
 `echo $DD_API_KEY`{{ execute }}
 
 A Datadog Application key should already be available as well.
-Datadog clients, such as the Datadog CI we are going to use later on, requires the app key.
+Datadog clients, such as the Datadog CI we are going to use later on, requires the app key. To see your app key:
 
 `echo $DD_APP_KEY`{{ execute }}
 
