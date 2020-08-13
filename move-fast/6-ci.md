@@ -32,17 +32,20 @@ You can find it either as the last part in the URL while browsing the test, or i
 
 Let's create this file and fill in this info in the editor:
 
-`touch /root/ecommerce-observability/discount.synthetics.json`{{ execute }}
+`touch /root/ecommerce-observability/discounts.synthetics.json`{{ execute }}
 
-Let's open this newly created file:
+Let's open this newly created file in `ecommerce-observability/discounts.synthetics.json`:
 
-<pre class="hljs file json" data-filename="/root/ecommerce-observability/discount.synthetics.json" data-target="replace">
+<pre class="hljs file json" data-filename="/root/ecommerce-observability/discounts.synthetics.json" data-target="replace">
 {
   "tests": [
     {
       "id": "the id of your synthetics test",
       "config": {
-        "startUrl": "your canary storedog url"
+        "startUrl": "your canary storedog url",
+        "variables": {
+          "DISCOUNTS_URL": "your canary discounts service url"
+        }
       }
     }
   ]
@@ -51,6 +54,10 @@ Let's open this newly created file:
 
 The `config.startUrl` tells the `datadog-ci` to override the start URL with the one given here.
 This is especially useful as we can use the exact same synthetics test for our production and canary.
+And the `config.variables` object contains local variables we would like to override during the test.
+We use it to override the discounts service url we used in the HTTP test step.
+But the HTTP test URL is currently hardcoded into the step, right?
+Let's change that then!
 
 ## Update test
 
@@ -60,31 +67,22 @@ With our new Canary setup, this hardcoded URL always points to the production `s
 Fortunately, HTTP tests accept variables in their URL.
 Let's create a variable containing the expected URL for the canary discount service.
 
-We create a new `Variables` step again, select `Javascript` in the dropdown.
-We can name this new variable `DISCOUNT_HREF`.
-And this time, we paste the following code:
-
-<pre class="hljs file javascript" data-target="clipboard">
-// build the right discounts service url
-return window.location.href
-  .replace('-3000-', '-5001-')
-  .replace('-3001-','-5003-') + 'discount'
-</pre>
-
-It takes the current URL, modifies the port to point to the discounts service, and appends the `/discount` path expected by the discounts service.
-
+We create a new _Variables_ step again, select _Pattern_ in the dropdown.
+We can name this new variable `DISCOUNTS_URL`, like the one in our `discounts.synthetics.json` config file.
+And the value of this variable should be the URL of your productin discounts service, **not the canary**, so that this test remains functional for our production environment.
+You can find this URL by clicking on `discounts` in the tabs, or directly from the URL with which we filled the HTTP step.
+Alternatively, it is the same as storedog, **except we replace 3000 or 3001 with 5001 (the url-coded port), and it ends with `/discount`**
 ![](assets/synthetics-ci-1.png)
 
 We have a variable containing the discount service URL, let's use it in the HTTP test step.
 We click on the `Run HTTP test` step to modify it, and then we click on the `Edit HTTP Request` button to access the details of the HTTP test.
-From there, we can change the URL and put our variable `DISCOUNT_HREF`.
+From there, we can change the URL and put our variable `DISCOUNTS_URL`.
 
 ![](assets/synthetics-ci-2.png)
 
-The new variable step is created at the end of the list of steps, and the variable won't be available to the HTTP test step!
-Let's drag this variable step and drop it in the fourth position, before the HTTP test step.
-
-![](assets/synthetics-ci-3.png)
+We created a variable containing the exact URL that we previously used for our HTTP test step.
+For our test, the change will have no effect.
+However, it allows us to override this variable with the canary URL when we trigger the Synthetic CI test.
 
 ## Trigger a successful run
 

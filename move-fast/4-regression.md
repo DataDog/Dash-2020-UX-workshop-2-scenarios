@@ -16,6 +16,7 @@ We can see the changes introduced.
 It will change the structure of the object returned from the discount service to the frontend.
 
 `git diff`{{ execute }}
+To exit the diff tool, you might need to press `q` or `escap` until you see the `$` again.
 
 And then commit and deploy these changes.
 

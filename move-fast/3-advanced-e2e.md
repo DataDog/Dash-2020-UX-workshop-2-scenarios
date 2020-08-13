@@ -19,9 +19,9 @@ We choose to create our variable from Javascript in the dropdown, and name it `C
 ![](assets/synthetics-elm-var-2.png)
 
 A few explanations of the different variables:
-- Pattern: create random values that are helpful to fill fields and forms randomly. For example, a timestamp.
+- Pattern: create random values that are helpful to fill fields and forms randomly. For example, a timestamp. It's not necessarily random, though. It can also create a variable containing a predefined, static text to be reused in the test.
 - Element: create a value from the content of the element. We won't use that as we need only a part of the content.
-- Global variable: create a local variable from a global variable, and make the variable available to all tests. It can contain credentials, URLs, and so on.
+- Global variable: import a global variable into this test. A global variable is available to all tests and can contain credentials, URLs, and so on, that needs to be available globally.
 - Email: create an email address that can receive mail. It's very useful for confirmation links, notifications, and so on.
 
 We want to extract the value from a specific element — the discount insert — so let's select this element, like in the previous steps.
@@ -50,7 +50,8 @@ Let's create an HTTP request step by clicking on the _HTTP Request_ button.
 ![](assets/synthetics-elm-http-1.png)
 
 It asks us an URL for the service to query.
-This url is the same as storedog, **except we replace 3000 with 5001 (the url-coded port), and it ends with `/discount`**
+This is the URL of our `discounts-servie` that is available by clicking on `discounts` in the tabs.
+Alternatively, it is the same as storedog, **except we replace 3000 with 5001 (the url-coded port), and it ends with `/discount`**
 The `/discount` endpoints returns all the available discount codes.
 And we will check that the extracted code is available within the returned codes.
 ![](assets/synthetics-elm-http-2.png)

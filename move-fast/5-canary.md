@@ -10,7 +10,7 @@ At scale, "this will never happen anyway" is next Tuesday morning.
 We can't act on the probability of failure because failure is always unexpected and undesirable.
 However, we can act on the scale of impact of the error on users.
 
-# Canary deployment
+# Canary deployment strategy
 
 The canary deployment strategy is deploying changes at a reduced scale to contain the overall risk of failure to a subset of users.
 We deploy the changes to only a subset of our infrastructure, or for a subset of users, and see that everything goes as planned before deploying the changes globally.
@@ -49,13 +49,14 @@ With scale, it might not be possible to update all the entries in the database o
 
 ![](assets/storedog-canary.png)
 
-# Storedog:canary
+# Deploy the canary
 
 Let's create a canary for our discount service and store-frontend.
 
 `git apply 0001-construction-canary.patch`{{ execute }}
 
 `git diff`{{ execute }}
+To exit the diff tool, you might need to press `q` or `escap` until you see the `$` again.
 
 ![](assets/synthetics-canary-diff)
 
@@ -76,13 +77,13 @@ Once it's ready, we should have a clone of our `storedog` ready to receive any c
 Let's break things once again!
 But only on the canary this time.
 
-### Canary branch
+**Canary branch**
 
 Let's change the branch to apply the modification only to our canary.
 
 `git checkout -b canary`{{ execute }}
 
-### Break things
+**Break things**
 
 `git apply 0001-fire-break-stuffs.patch`{{ execute }}
 
@@ -92,7 +93,7 @@ Let's change the branch to apply the modification only to our canary.
 
 Once the change is deployed, we can see it live on the canary only, while our production is still pristine.
 
-### Revert!
+**Revert!**
 
 `git revert HEAD --no-edit`{{ execute }}
 
